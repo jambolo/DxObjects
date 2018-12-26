@@ -2,20 +2,19 @@
 
                                                         Axes.h
 
-						                    Copyright 2006, John J. Bolton
-	--------------------------------------------------------------------------------------------------------------
+                                            Copyright 2006, John J. Bolton
+    --------------------------------------------------------------------------------------------------------------
 
-	$Header: //depot/DxObjects/Axes/Axes.h#1 $
+    $Header: //depot/DxObjects/Axes/Axes.h#1 $
 
-	$NoKeywords: $
+    $NoKeywords: $
 
- ********************************************************************************************************************/
+********************************************************************************************************************/
 
 #pragma once
 
-
-#if defined( _DEBUG )
-	#define D3D_DEBUG_INFO
+#if defined(_DEBUG)
+#define D3D_DEBUG_INFO
 #endif
 #include <d3dx9math.h>
 #include <Dxx/D3d.h>
@@ -24,7 +23,6 @@ struct IDirect3DDevice9;
 
 namespace DxObjects
 {
-
 /********************************************************************************************************************/
 /*																													*/
 /********************************************************************************************************************/
@@ -33,19 +31,17 @@ class Axes
 {
 public:
 
-	//! Constructor
-	explicit Axes( IDirect3DDevice9 * pD3dDevice, float size = 1.0f );
+    //! Constructor
+    explicit Axes(IDirect3DDevice9 * pD3dDevice, float size = 1.0f);
 
-	//! Destructor
-	virtual ~Axes();
+    //! Destructor
+    virtual ~Axes();
 
-	void Draw();
+    void Draw();
 
 private:
 
-	IDirect3DDevice9 *	m_pD3dDevice;
-	float				m_size;
+    IDirect3DDevice9 * m_pD3dDevice;
+    float m_size;
 };
-
-
 } // namespace DxObjects
