@@ -13,16 +13,10 @@
 
 #pragma once
 
-
 #include "Dxx/Camera.h"
 
 namespace DxObjects
 {
-
-
-/********************************************************************************************************************/
-/*																													*/
-/********************************************************************************************************************/
 
 //! A camera for use in situations where the "up" direction is fixed.
 //!
@@ -47,7 +41,7 @@ public:
 				   float roll						= 0.f );
 
 	//! Destructor
-	virtual ~TerrainCamera();
+	virtual ~TerrainCamera() = default;
 
 	//! @name	Overrides Camera
 	//@{

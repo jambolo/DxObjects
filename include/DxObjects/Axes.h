@@ -19,7 +19,6 @@
 #endif
 #include <d3dx9math.h>
 #include <Dxx/D3d.h>
-#include <boost/noncopyable.hpp>
 
 struct IDirect3DDevice9;
 
@@ -30,7 +29,7 @@ namespace DxObjects
 /*																													*/
 /********************************************************************************************************************/
 
-class Axes : boost::noncopyable
+class Axes
 {
 public:
 

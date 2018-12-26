@@ -11,11 +11,7 @@
 
  ********************************************************************************************************************/
 
-#define STRICT
-#define WIN32_LEAN_AND_MEAN
-#define NOMINMAX
-
-#include "LensFlare.h"
+#include "DxObjects/LensFlare.h"
 
 #include <windows.h>
 #include <d3dx9.h>
@@ -29,10 +25,6 @@
 
 namespace DxObjects
 {
-
-/********************************************************************************************************************/
-/*																													*/
-/********************************************************************************************************************/
 
 /// @param	pD3dDevice	Device the skybox will be drawn on
 /// @param	sPath		Location of the texture
@@ -56,22 +48,12 @@ LensFlare::LensFlare( IDirect3DDevice9 * pD3dDevice, char const * sPath, Element
 	}
 }
 
-
-/********************************************************************************************************************/
-/*																													*/
-/********************************************************************************************************************/
-
 LensFlare::~LensFlare()
 {
 	SAFE_RELEASE( m_pVB );
 	SAFE_RELEASE( m_pTexture );
 	SAFE_RELEASE( m_pD3dDevice );
 }
-
-
-/********************************************************************************************************************/
-/*																													*/
-/********************************************************************************************************************/
 
 /// This function draws the lens flare if the source is in the view frustum. The @a intensity parameter is used to
 /// vary the amount of flare based on the intensity and/or occlusion of the source. The @a position and @a camera

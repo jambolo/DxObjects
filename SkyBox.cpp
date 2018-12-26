@@ -11,9 +11,7 @@
 
  ********************************************************************************************************************/
 
-#include "PrecompiledHeaders.h"
-
-#include "SkyBox.h"
+#include "DxObjects/SkyBox.h"
 
 #include "Dxx/Dxx.h"
 #include "Misc/Exceptions.h"
@@ -24,10 +22,6 @@
 namespace DxObjects
 {
 
-
-/********************************************************************************************************************/
-/*																													*/
-/********************************************************************************************************************/
 
 //! @param	pD3dDevice	Device the skybox will be drawn on
 //! @param	sFilename	Base file name of the files containing the skybox textures.
@@ -144,11 +138,6 @@ SkyBox::SkyBox( IDirect3DDevice9 * pD3dDevice, char const * sFileName, char cons
 	hr = Dxx::CreateStaticVertexBuffer( m_pD3dDevice, aVertices, sizeof( aVertices ), FVF, &m_pVB );
 }
 
-
-/********************************************************************************************************************/
-/*																													*/
-/********************************************************************************************************************/
-
 SkyBox::~SkyBox()
 {
 	Wx::SafeRelease( m_pVB );
@@ -159,11 +148,6 @@ SkyBox::~SkyBox()
 
 	Wx::SafeRelease( m_pD3dDevice );
 }
-
-
-/********************************************************************************************************************/
-/*																													*/
-/********************************************************************************************************************/
 
 //! @param	camera	The camera for the scene
 //! @param	bTestZ	If @c true, then enable depth-testing when drawing
@@ -194,11 +178,6 @@ void SkyBox::Draw( Dxx::Camera const & camera, bool bTestZ/* = false*/ )
 		  ( camera.GetNearDistance() + camera.GetFarDistance() ) / ( 1.f + float( Math::SQRT_OF_3 ) ),
 		  bTestZ );
 }
-
-
-/********************************************************************************************************************/
-/*																													*/
-/********************************************************************************************************************/
 
 //! @param	vp	Location of the view point (the skybox is centered at this point)
 //! @param	r	Distance from the center of the skybox to a side.
